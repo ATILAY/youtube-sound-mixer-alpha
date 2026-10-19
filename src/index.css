@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply bg-slate-950 text-slate-100 antialiased; }
+
+input[type='range'].slider {
+  -webkit-appearance: none; appearance: none; width: 100%; height: 2.25rem;
+  background: transparent; touch-action: pan-y;
+}
+.slider::-webkit-slider-runnable-track { height: 0.5rem; border-radius: 9999px; background: #334155; }
+.slider::-moz-range-track { height: 0.5rem; border-radius: 9999px; background: #334155; }
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; height: 1.75rem; width: 1.75rem; margin-top: -0.625rem;
+  border-radius: 9999px; background: #818cf8; border: 0;
+}
+.slider::-moz-range-thumb { height: 1.75rem; width: 1.75rem; border-radius: 9999px; background: #818cf8; border: 0; }
+.slider:disabled { opacity: 0.4; }
+@keyframes pop-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+.pop-in { animation: pop-in 0.2s ease-out; }
